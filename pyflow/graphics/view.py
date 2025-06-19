@@ -69,7 +69,6 @@ class View(QGraphicsView):
         # Antialiasing
         self.setRenderHints(
             QPainter.RenderHint.Antialiasing
-            | QPainter.RenderHint.HighQualityAntialiasing
             | QPainter.RenderHint.TextAntialiasing
             | QPainter.RenderHint.SmoothPixmapTransform
         )
@@ -413,7 +412,7 @@ class View(QGraphicsView):
 
     def wheelEvent(self, event: QWheelEvent):
         """Handles zooming with mouse wheel events."""
-        if Qt.Modifier.CTRL == int(event.modifiers()):
+        if event.modifiers() == Qt.ControlModifier:
             # calculate zoom
             if event.angleDelta().y() > 0:
                 zoom_factor = self.zoom_step

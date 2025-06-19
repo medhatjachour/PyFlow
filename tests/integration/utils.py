@@ -16,8 +16,8 @@ from queue import Queue
 import pytest_check as check
 import asyncio
 
-from PyQt5.QtWidgets import QApplication, QGraphicsItem
-from PyQt5.QtCore import QPointF, QPoint
+from PySide6.QtWidgets import QApplication, QGraphicsItem
+from PySide6.QtCore import QPointF, QPoint
 
 from pyflow.graphics.widget import Widget
 from pyflow.graphics.window import Window

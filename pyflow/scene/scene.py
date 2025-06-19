@@ -9,9 +9,9 @@ from os import path
 from types import FunctionType, ModuleType
 from typing import TYPE_CHECKING, Any, List, OrderedDict, Union
 
-from PyQt5.QtCore import QLine, QRectF, QThreadPool
-from PyQt5.QtGui import QColor, QPainter, QPen
-from PyQt5.QtWidgets import QGraphicsScene
+from PySide6.QtCore import QLine, QRectF, QThreadPool
+from PySide6.QtGui import QColor, QPainter, QPen
+from PySide6.QtWidgets import QGraphicsScene
 
 from pyflow.core.serializable import Serializable
 from pyflow.blocks.block import Block
@@ -46,7 +46,7 @@ class Scene(QGraphicsScene, Serializable):
         grid_squares: int = 5,
     ):
         Serializable.__init__(self)
-        QGraphicsScene.__init__(self, parent=parent)
+        QGraphicsScene.__init__(self, parent)
 
         self._background_color = QColor(background_color)
         self._grid_color = QColor(grid_color)
@@ -138,12 +138,12 @@ class Scene(QGraphicsScene, Serializable):
         pen = QPen(self._grid_color)
         pen.setWidth(2)
         painter.setPen(pen)
-        painter.drawLines(*lines_dark)
+        painter.drawLines(lines_dark)
 
         pen = QPen(self._grid_light_color)
         pen.setWidth(1)
         painter.setPen(pen)
-        painter.drawLines(*lines_light)
+        painter.drawLines(lines_light)
 
     def save(self, filepath: str):
         """Save the scene into filepath."""

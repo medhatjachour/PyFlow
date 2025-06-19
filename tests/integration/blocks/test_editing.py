@@ -11,7 +11,7 @@ import pytest
 import pyautogui
 from pytestqt.qtbot import QtBot
 
-from PyQt5.QtCore import QPointF
+from PySide6.QtCore import QPointF
 from pyflow.blocks.block import Block
 
 from pyflow.blocks.codeblock import CodeBlock

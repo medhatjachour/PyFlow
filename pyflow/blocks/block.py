@@ -64,7 +64,7 @@ class Block(QGraphicsItem, Serializable):
             parent: Parent of the block.
 
         """
-        QGraphicsItem.__init__(self, parent=parent)
+        QGraphicsItem.__init__(self, parent)
         Serializable.__init__(self)
 
         self.block_type = block_type

@@ -313,23 +313,16 @@ class Window(QMainWindow):
             self.windowMapper.setMapping(action, window)
 
     def createNewMdiChild(self, filename: str = None):
-        """Create a new graph subwindow loading a file if a path is given."""
         LOGGER.debug("Starting graph creation...")
         try:
             LOGGER.debug("Instantiating Widget...")
             _widget = Widget()
             LOGGER.debug("Widget instantiated successfully.")
 
-            if filename is not None:
-                LOGGER.debug(f"Loading file: {filename}")
-                _widget.scene.load(filename)
-                LOGGER.debug("File loaded successfully.")
-                if filename.split(".")[-1] == "ipyg":
-                    _widget.savepath = filename
-
-            LOGGER.debug("Adding subwindow to MDI area...")
+            LOGGER.debug("About to add subwindow...")
             subwindow = self.mdiArea.addSubWindow(_widget)
-            LOGGER.debug("Subwindow added successfully.")
+            LOGGER.debug("Subwindow added.")
+
             return subwindow
         except Exception as e:
             LOGGER.error(f"Error during graph creation: {e}")
