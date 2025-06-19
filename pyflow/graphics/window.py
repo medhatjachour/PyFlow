@@ -7,11 +7,10 @@
 import os
 import pathlib
 
-from PyQt5.QtCore import QPoint, QSettings, QSize, Qt, QSignalMapper
-from PyQt5.QtGui import QCloseEvent, QKeySequence
-from PyQt5.QtWidgets import (
+from PySide6.QtCore import QPoint, QSettings, QSize, Qt, QSignalMapper
+from PySide6.QtGui import QCloseEvent, QKeySequence,QAction
+from PySide6.QtWidgets import (
     QWidget,
-    QAction,
     QFileDialog,
     QMainWindow,
     QMessageBox,
@@ -25,7 +24,7 @@ from pyflow.graphics.theme_manager import theme_manager
 from pyflow.qss import loadStylesheets
 from pyflow.qss import __file__ as QSS_INIT_PATH
 from pyflow.scene.clipboard import BlocksClipboard
-from pyflow.logging import log_init_time, get_logger
+from pyflow.pyflow_logging import log_init_time, get_logger
 
 LOGGER = get_logger(__name__)
 QSS_PATH = pathlib.Path(QSS_INIT_PATH).parent
@@ -56,10 +55,10 @@ class Window(QMainWindow):
 
         self.mdiArea.subWindowActivated.connect(self.updateMenus)
         self.windowMapper = QSignalMapper(self)
-        self.windowMapper.mapped[QWidget].connect(self.setActiveSubWindow)
+        self.windowMapper.mappedObject.connect(self.setActiveSubWindow)
 
         self.themeMapper = QSignalMapper(self)
-        self.themeMapper.mapped[int].connect(self.setTheme)
+        self.themeMapper.mappedInt.connect(self.setTheme)
 
         # Menus
         self.createActions()
@@ -315,12 +314,26 @@ class Window(QMainWindow):
 
     def createNewMdiChild(self, filename: str = None):
         """Create a new graph subwindow loading a file if a path is given."""
-        _widget = Widget()
-        if filename is not None:
-            _widget.scene.load(filename)
-            if filename.split(".")[-1] == "ipyg":
-                _widget.savepath = filename
-        return self.mdiArea.addSubWindow(_widget)
+        LOGGER.debug("Starting graph creation...")
+        try:
+            LOGGER.debug("Instantiating Widget...")
+            _widget = Widget()
+            LOGGER.debug("Widget instantiated successfully.")
+
+            if filename is not None:
+                LOGGER.debug(f"Loading file: {filename}")
+                _widget.scene.load(filename)
+                LOGGER.debug("File loaded successfully.")
+                if filename.split(".")[-1] == "ipyg":
+                    _widget.savepath = filename
+
+            LOGGER.debug("Adding subwindow to MDI area...")
+            subwindow = self.mdiArea.addSubWindow(_widget)
+            LOGGER.debug("Subwindow added successfully.")
+            return subwindow
+        except Exception as e:
+            LOGGER.error(f"Error during graph creation: {e}")
+            raise
 
     def onFileNew(self):
         """Create a new file."""

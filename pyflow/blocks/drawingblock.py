@@ -12,9 +12,9 @@ from math import floor
 import json
 from typing import OrderedDict
 
-from PyQt5.QtCore import Qt, pyqtSignal
-from PyQt5.QtGui import QColor, QMouseEvent, QPaintEvent, QPainter
-from PyQt5.QtWidgets import QPushButton, QWidget
+from PySide6.QtCore import Qt, Signal
+from PySide6.QtGui import QColor, QMouseEvent, QPaintEvent, QPainter
+from PySide6.QtWidgets import QPushButton, QWidget
 from pyflow.blocks.executableblock import ExecutableBlock
 
 
@@ -24,7 +24,7 @@ eps = 1
 class DrawableWidget(QWidget):
     """A drawable widget is a canvas like widget on which you can doodle."""
 
-    on_value_changed = pyqtSignal()
+    on_value_changed = Signal()
 
     def __init__(self, parent: QWidget):
         """Create a new Drawable widget."""

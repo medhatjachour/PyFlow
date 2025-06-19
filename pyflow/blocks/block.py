@@ -6,9 +6,9 @@
 
 from typing import TYPE_CHECKING, List, Optional, OrderedDict, Tuple, Union
 
-from PyQt5.QtCore import QPointF, QRectF, Qt
-from PyQt5.QtGui import QBrush, QPen, QColor, QPainter, QPainterPath
-from PyQt5.QtWidgets import (
+from PySide6.QtCore import QPointF, QRectF, Qt
+from PySide6.QtGui import QBrush, QPen, QColor, QPainter, QPainterPath
+from PySide6.QtWidgets import (
     QGraphicsItem,
     QGraphicsProxyWidget,
     QGraphicsSceneMouseEvent,

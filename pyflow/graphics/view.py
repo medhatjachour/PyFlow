@@ -8,10 +8,9 @@ import os
 import pathlib
 from typing import List, Optional, Tuple
 
-from PyQt5.QtCore import QEvent, QPoint, QPointF, Qt
-from PyQt5.QtGui import QKeyEvent, QMouseEvent, QPainter, QWheelEvent, QContextMenuEvent
-from PyQt5.QtWidgets import QGraphicsView, QMenu, QApplication
-from PyQt5.sip import isdeleted
+from PySide6.QtCore import QEvent, QPoint, QPointF, Qt
+from PySide6.QtGui import QKeyEvent, QMouseEvent, QPainter, QWheelEvent, QContextMenuEvent
+from PySide6.QtWidgets import QGraphicsView, QMenu, QApplication
 from pyflow.blocks.codeblock import CodeBlock
 from pyflow.blocks.executableblock import ExecutableBlock
 from pyflow.core.add_button import AddEdgeButton, AddNewBlockButton
@@ -20,7 +19,7 @@ from pyflow.scene import Scene
 from pyflow.core.socket import Socket
 from pyflow.core.edge import Edge
 from pyflow.blocks.block import Block
-from pyflow.logging import get_logger
+from pyflow.pyflow_logging import get_logger
 from pyflow.blocks import __file__ as BLOCK_INIT_PATH
 
 BLOCK_PATH = pathlib.Path(BLOCK_INIT_PATH).parent
@@ -459,7 +458,8 @@ class View(QGraphicsView):
     @property
     def currentSelectedBlock(self) -> Block:
         """Return the selected block in front of other blocks."""
-        if self._currentSelectedBlock is None or isdeleted(self._currentSelectedBlock):
+        # remove isDeleted and add is Valid 
+        if self._currentSelectedBlock is None or self._currentSelectedBlock.isValid() is False:
             self._currentSelectedBlock = None
         return self._currentSelectedBlock
 

@@ -13,8 +13,8 @@ import os
 import pathlib
 from typing import List
 
-from PyQt5.QtGui import QFontDatabase
-from PyQt5.QtCore import pyqtSignal, QObject
+from PySide6.QtGui import QFontDatabase
+from PySide6.QtCore import Signal, QObject
 
 from pyflow.graphics.theme import Theme
 from pyflow import __file__ as INIT_PATH
@@ -25,7 +25,7 @@ PACKAGE_PATH = pathlib.Path(INIT_PATH).parent
 class ThemeManager(QObject):
     """Class loading theme files and providing the options set in those files."""
 
-    themeChanged = pyqtSignal()
+    themeChanged = Signal()
 
     def __init__(self, parent=None):
         """Load the default themes and the fonts available to construct the ThemeManager."""

@@ -4,17 +4,17 @@
 """ Module to create and manage multi-threading workers."""
 
 import asyncio
-from PyQt5.QtCore import QObject, pyqtSignal, QRunnable
+from PySide6.QtCore import QObject, Signal, QRunnable
 
 
 class WorkerSignals(QObject):
     """Defines the signals available from a running worker thread."""
 
-    stdout = pyqtSignal(str)
-    image = pyqtSignal(str)
-    finished = pyqtSignal()
-    finished_block = pyqtSignal()
-    error = pyqtSignal()
+    stdout = Signal(str)
+    image = Signal(str)
+    finished = Signal()
+    finished_block = Signal()
+    error = Signal()
 
 
 class Worker(QRunnable):

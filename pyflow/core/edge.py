@@ -7,9 +7,9 @@ from __future__ import annotations
 
 from typing import Optional, OrderedDict
 
-from PyQt5.QtCore import QPointF, Qt
-from PyQt5.QtGui import QColor, QPainter, QPainterPath, QPen
-from PyQt5.QtWidgets import (
+from PySide6.QtCore import QPointF, Qt
+from PySide6.QtGui import QColor, QPainter, QPainterPath, QPen
+from PySide6.QtWidgets import (
     QGraphicsPathItem,
     QStyleOptionGraphicsItem,
     QWidget,

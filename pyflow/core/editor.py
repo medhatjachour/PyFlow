@@ -4,12 +4,13 @@
 """ Module for the PyFlow editor."""
 
 from typing import TYPE_CHECKING, List
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import (
+from PySide6.QtCore import Qt
+from PySide6.QtGui import (
     QFocusEvent,
     QMouseEvent,
 )
-from PyQt5.Qsci import QsciScintilla
+# cannot import QsciScintilla and QsciLexerPython from Pyside 6
+from PyQt6.Qsci import QsciScintilla, QsciLexerPython
 
 from pyflow.blocks.block import Block
 

@@ -9,8 +9,8 @@ An abstract block that allows for execution, like CodeBlocks and Sliders.
 
 from typing import List, OrderedDict, Set, Union
 from abc import abstractmethod
-from PyQt5.QtCore import QTimer
-from PyQt5.QtWidgets import QApplication
+from PySide6.QtCore import QTimer
+from PySide6.QtWidgets import QApplication
 
 from pyflow.blocks.block import Block
 from pyflow.core.socket import Socket

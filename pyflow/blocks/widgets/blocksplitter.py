@@ -7,8 +7,8 @@ The Splitter contains multiple areas inside a block
 and allows the user to resize those areas.
 """
 
-from PyQt5.QtGui import QMouseEvent
-from PyQt5.QtWidgets import QSplitter, QSplitterHandle, QWidget
+from PySide6.QtGui import QMouseEvent
+from PySide6.QtWidgets import QSplitter, QSplitterHandle, QWidget
 
 
 class SplitterHandle(QSplitterHandle):

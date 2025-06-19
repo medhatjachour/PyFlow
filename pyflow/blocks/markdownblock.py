@@ -10,9 +10,9 @@ A block able to render Markdown.
 from typing import OrderedDict
 from markdown import markdown
 
-from PyQt5.QtWebEngineWidgets import QWebEngineView
-from PyQt5.Qsci import QsciLexerMarkdown, QsciScintilla
-from PyQt5.QtGui import QColor, QFont
+from PySide6.QtWebEngineWidgets import QWebEngineView
+from PyQt6.Qsci import QsciLexerMarkdown, QsciScintilla
+from PySide6.QtGui import QColor, QFont
 from pyflow.blocks.block import Block
 from pyflow.blocks.mdeditor import MarkdownEditor
 from pyflow.graphics.theme_manager import theme_manager

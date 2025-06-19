@@ -8,12 +8,12 @@ import math
 
 from typing import TYPE_CHECKING, List, Optional
 
-from PyQt5.QtCore import QRectF, QPoint
-from PyQt5.QtGui import QBrush, QColor, QPainter, QPen, QPolygon
-from PyQt5.QtWidgets import QGraphicsItem, QStyleOptionGraphicsItem, QWidget
+from PySide6.QtCore import QRectF, QPoint
+from PySide6.QtGui import QBrush, QColor, QPainter, QPen, QPolygon
+from PySide6.QtWidgets import QGraphicsItem, QStyleOptionGraphicsItem, QWidget
 
 if TYPE_CHECKING:
-    from PyQt5.QtWidgets import QGraphicsSceneHoverEvent
+    from PySide6.QtWidgets import QGraphicsSceneHoverEvent
     from pyflow.blocks.executableblock import ExecutableBlock
     from pyflow.core.edge import Edge
 

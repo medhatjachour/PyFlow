@@ -8,8 +8,8 @@ Theme is a class that contains the details of the coloring theme.
 """
 
 import json
-from PyQt5.Qsci import QsciLexerPython
-from PyQt5.QtGui import QColor
+from PyQt6.Qsci import QsciLexerPython
+from PySide6.QtGui import QColor
 
 
 class Theme:

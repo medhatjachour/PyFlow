@@ -8,8 +8,8 @@ A block that can allows dynamic value modification using a slider.
 """
 
 from typing import OrderedDict
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QHBoxLayout, QLabel, QLineEdit, QSlider, QVBoxLayout
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QHBoxLayout, QLabel, QLineEdit, QSlider, QVBoxLayout
 from pyflow.blocks.executableblock import ExecutableBlock
 
 

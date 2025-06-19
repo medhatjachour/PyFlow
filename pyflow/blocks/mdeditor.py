@@ -3,8 +3,8 @@
 
 """ Module for the PyFlow markdown editor."""
 
-from PyQt5.QtCore import Qt
-from PyQt5.Qsci import QsciScintilla
+from PySide6.QtCore import Qt
+from PyQt6.Qsci import QsciScintilla
 
 from pyflow.blocks.block import Block
 from pyflow.core.editor import Editor

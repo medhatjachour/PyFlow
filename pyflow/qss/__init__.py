@@ -5,8 +5,8 @@
 
 from typing import List
 
-from PyQt5.QtCore import QFile
-from PyQt5.QtWidgets import QApplication
+from PySide6.QtCore import QFile
+from PySide6.QtWidgets import QApplication
 
 from pyflow.qss import dark_resources
 

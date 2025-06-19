@@ -9,9 +9,9 @@ The Title is a modified QLineEdit for PyFlow purpose.
 
 import time
 from typing import List, OrderedDict, TYPE_CHECKING
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QFocusEvent, QFont, QMouseEvent
-from PyQt5.QtWidgets import QLineEdit, QWidget, QGraphicsItem
+from PySide6.QtCore import Qt
+from PySide6.QtGui import QFocusEvent, QFont, QMouseEvent
+from PySide6.QtWidgets import QLineEdit, QWidget, QGraphicsItem
 
 from pyflow.core.serializable import Serializable
 

@@ -5,7 +5,7 @@
 
 from typing import OrderedDict, List
 
-from PyQt5.QtGui import QFontMetrics, QFont
+from PySide6.QtGui import QFontMetrics, QFont
 
 from pyflow.scene.ipynb_conversion_constants import *
 from pyflow.graphics.theme_manager import theme_manager

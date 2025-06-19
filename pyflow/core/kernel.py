@@ -9,7 +9,7 @@ from jupyter_client.manager import start_new_kernel
 from pyflow.blocks.executableblock import ExecutableState
 
 from pyflow.core.worker import Worker
-from pyflow.logging import log_init_time, get_logger
+from pyflow.pyflow_logging import log_init_time, get_logger
 
 if TYPE_CHECKING:
     from pyflow.blocks.executableblock import ExecutableBlock

@@ -5,8 +5,8 @@
 
 from typing import TYPE_CHECKING, Optional, OrderedDict, Tuple
 
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import (
+from PySide6.QtCore import Qt
+from PySide6.QtGui import (
     QFocusEvent,
     QFont,
     QFontMetrics,
@@ -14,8 +14,9 @@ from PyQt5.QtGui import (
     QKeyEvent,
     QWheelEvent,
 )
-from PyQt5.QtWidgets import QApplication
-from PyQt5.Qsci import QsciScintilla, QsciLexerPython
+from PySide6.QtWidgets import QApplication
+# cannot import QsciScintilla and QsciLexerPython from Pyside 6 
+from PyQt6.Qsci import QsciScintilla, QsciLexerPython
 
 from pyflow.core.editor import Editor
 from pyflow.core.history import History

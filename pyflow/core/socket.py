@@ -7,9 +7,9 @@ from __future__ import annotations
 from typing import List, Optional, OrderedDict, TYPE_CHECKING
 import math
 
-from PyQt5.QtCore import QPoint, QPointF, QRectF
-from PyQt5.QtGui import QBrush, QColor, QPainter, QPen, QPolygon
-from PyQt5.QtWidgets import QGraphicsItem, QStyleOptionGraphicsItem, QWidget
+from PySide6.QtCore import QPoint, QPointF, QRectF
+from PySide6.QtGui import QBrush, QColor, QPainter, QPen, QPolygon
+from PySide6.QtWidgets import QGraphicsItem, QStyleOptionGraphicsItem, QWidget
 
 from pyflow.core.serializable import Serializable
 

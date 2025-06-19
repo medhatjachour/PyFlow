@@ -6,8 +6,8 @@
 from typing import TYPE_CHECKING, OrderedDict, Tuple
 
 from ansi2html import Ansi2HTMLConverter
-from PyQt5.QtGui import QColor, QPen
-from PyQt5.QtWidgets import QPushButton, QTextEdit
+from PySide6.QtGui import QColor, QPen
+from PySide6.QtWidgets import QPushButton, QTextEdit
 
 from pyflow.blocks.block import Block
 from pyflow.core.edge import Edge
@@ -18,7 +18,7 @@ from pyflow.core.add_button import AddEdgeButton, AddNewBlockButton
 ansi2html_converter = Ansi2HTMLConverter()
 
 if TYPE_CHECKING:
-    from PyQt5.QtWidgets import QGraphicsSceneHoverEvent
+    from PySide6.QtWidgets import QGraphicsSceneHoverEvent
 
 
 class CodeBlock(ExecutableBlock):

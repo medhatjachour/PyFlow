@@ -7,7 +7,7 @@ A block that can contain other blocks.
 
 """
 
-from PyQt5.QtWidgets import QVBoxLayout
+from PySide6.QtWidgets import QVBoxLayout
 from pyflow.blocks.block import Block
 
 

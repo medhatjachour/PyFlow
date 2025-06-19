@@ -7,9 +7,9 @@ The size grip is the little icon at the bottom right of a block that is used to
 resize a block.
 """
 
-from PyQt5.QtCore import QPoint
-from PyQt5.QtWidgets import QGraphicsItem, QSizeGrip, QWidget
-from PyQt5.QtGui import QMouseEvent
+from PySide6.QtCore import QPoint
+from PySide6.QtWidgets import QGraphicsItem, QSizeGrip, QWidget
+from PySide6.QtGui import QMouseEvent
 
 
 class SizeGrip(QSizeGrip):

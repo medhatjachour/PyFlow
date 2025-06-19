@@ -5,23 +5,26 @@
 
 import os
 
-from PyQt5.QtWidgets import QVBoxLayout, QWidget
-from PyQt5.QtCore import Qt
+from PySide6.QtWidgets import QVBoxLayout, QWidget
+from PySide6.QtCore import Qt
 
 from pyflow.scene import Scene
 from pyflow.graphics.view import View
-from pyflow.logging import log_init_time, get_logger
+from pyflow.pyflow_logging import log_init_time, get_logger
 
 LOGGER = get_logger(__name__)
 
 
 class Widget(QWidget):
-
-    """Widget for a graph visualisation."""
-
-    @log_init_time(LOGGER)
     def __init__(self, parent=None):
+        LOGGER.debug("Initializing Widget...")
         super().__init__(parent)
+        try:
+            # Widget initialization logic
+            LOGGER.debug("Widget initialized successfully.")
+        except Exception as e:
+            LOGGER.error(f"Error during Widget initialization: {e}")
+            raise
         self.setAttribute(Qt.WidgetAttribute.WA_DeleteOnClose)
 
         self.layout = QVBoxLayout()
